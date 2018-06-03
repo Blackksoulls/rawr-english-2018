@@ -246,6 +246,59 @@
   }
 }
 
+#sectionWhy {
+  background-color: #efebe9;
+  @include box_shadow(3);
+  position: relative;
+  z-index: 70;
+  & h2 {
+    color: #795548;
+    text-align: center;
+    padding: 1em 0;
+    font-size: 2em;
+  }
+  & div {
+    display: flex;
+    height: 75%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    & img {
+      margin: 0.75em;
+      height: 45vmin;
+      @include box_shadow(1);
+    }
+  }
+}
+
+#sectionWho {
+  background-color: #795548;
+  @include box_shadow(3);
+  position: relative;
+  z-index: 65;
+  color: #efebe9;
+  text-align: center;
+  padding: 1em 0;
+  font-size: 2em;
+  & div {
+      margin: 0 5vmin;
+    & p {
+      font-size: 0.75em;
+      text-align: justify;
+      margin: 1em 0;
+    }
+    & button {
+      background-color: #a1887f;
+      border: solid #5B4B38 5px;
+      padding: 0.25em 0.75em;
+      @include  box_shadow(1);
+      &:hover {
+        filter: brightness(150%);
+      }
+    }
+  }
+}
+
+
 @include phone {
   #footer {
     height: 20vh;
@@ -263,5 +316,19 @@
       position: relative;
       color: #bdbdbd;
     }
+  }
+  #sectionWhy {
+    height: fit-content;
+    & div {
+      justify-content: center;
+      height: fit-content;
+      & img {
+        height: 60vmin;
+      }
+    }
+  }
+
+  #sectionWho {
+    height: fit-content;
   }
 }
