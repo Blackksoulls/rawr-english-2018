@@ -174,18 +174,20 @@
   position: relative;
   background-color: #fafafa;
   overflow: hidden;
-  padding: 15vmin 0 0 15vmin;
+  padding: 1em 0 2em 0;
+  height: fit-content;
 
   @include box_shadow(3);
 
   & h2 {
-    font-family: "Open Sans Condensed", sans-serif;
     color: #a1887f;
-    text-shadow: 0 0 3px #000;
-    font-size: 2em;
+    text-align: center;
+    font-size: 2.5em;
   }
   & div {
     margin: 1em;
+    left: 50%;
+    transform: translate(25%,0);
     & h3 {
       font-size: 1.3em;
     }
@@ -247,20 +249,22 @@
 }
 
 #sectionWhy {
+  height: fit-content;
   background-color: #efebe9;
   @include box_shadow(3);
   position: relative;
   z-index: 70;
+  padding-bottom: 3em;
   & h2 {
     color: #795548;
     text-align: center;
     padding: 1em 0;
-    font-size: 2em;
+    font-size: 2.5em;
   }
   & div {
     display: flex;
+    flex-flow: row wrap;
     height: 75%;
-    flex-wrap: wrap;
     justify-content: space-between;
     & img {
       margin: 0.75em;
@@ -271,13 +275,14 @@
 }
 
 #sectionWho {
+  height: fit-content;
   background-color: #795548;
   @include box_shadow(3);
   position: relative;
   z-index: 65;
   color: #efebe9;
   text-align: center;
-  padding: 1em 0;
+  padding: 1em 0 2em 0;
   font-size: 2em;
   & div {
       margin: 0 5vmin;
@@ -289,7 +294,8 @@
     & button {
       background-color: #a1887f;
       border: solid #5B4B38 5px;
-      padding: 0.25em 0.75em;
+      height: 2em;
+      width: 6em;
       @include  box_shadow(1);
       &:hover {
         filter: brightness(150%);
@@ -298,8 +304,29 @@
   }
 }
 
+.flex-centered {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  & button:first-of-type {
+    margin-bottom: 1em;
+  }
+}
+
+/* Media queries */
+@include desktop {
+  #sectionWho .text {
+    max-width: 70%;
+    margin-left: 15%;
+  }
+}
 
 @include phone {
+  #section2 div {
+    left: 0;
+    transform: none;
+  }
+
   #footer {
     height: 20vh;
     overflow: hidden;
